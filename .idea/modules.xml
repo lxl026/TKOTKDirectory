@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TKOTKDirectory.iml" filepath="$PROJECT_DIR$/TKOTKDirectory.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smallchart/smallchart.iml" filepath="$PROJECT_DIR$/smallchart/smallchart.iml" />
     </modules>
   </component>
 </project>

@@ -59,6 +59,7 @@ public class HeroAdapter extends RecyclerView.Adapter<HeroAdapter.ViewHolder> {
                 int position = holder.getAdapterPosition();
                 Hero hero = HerosList.get(position);
                 Toast.makeText(v.getContext(),"长按了"+hero.getName()+"，应该实现弹出删除提示\n到HeroAdapter.java61行实现",Toast.LENGTH_LONG).show();
+                HerosList.remove(position);
                 return false;
             }
         });

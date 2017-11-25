@@ -4,4 +4,10 @@
     <string name="title_activity_search">SearchActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Choose_Country">选择势力:</string>
+    <string name="Wei">魏</string>
+    <string name="Shu">蜀</string>
+    <string name="Wu">吴</string>
+
+    <string name="title_activity_reference_web_site">ReferenceWebSiteActivity</string>
 </resources>

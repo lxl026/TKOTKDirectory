@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/bgm"
+            android:title="背景音乐"
+            />
+        <item
+            android:id="@+id/clean"
+            android:title="清理存储图片"
+            android:icon="@drawable/cross"
+            />
+        <item
+            android:id="@+id/restore"
+            android:title="恢复数据库"
+            android:icon="@drawable/checkmark"
+            />
+        <item
+            android:id="@+id/reference_website"
+            android:title="参考网站"
+            android:icon="@drawable/link"
+            />
 
-    <item
-        android:id="@+id/reference_website"
-        android:title="参考网站"
-        android:icon="@drawable/link"
-        />
-
-    <item
-        android:id="@+id/aboutus"
-        android:title="关于我们"
-        android:icon="@drawable/aboutus"
-        />
+        <item
+            android:id="@+id/aboutus"
+            android:title="关于我们"
+            android:icon="@drawable/aboutus"
+            />
+    </group>
 </menu>

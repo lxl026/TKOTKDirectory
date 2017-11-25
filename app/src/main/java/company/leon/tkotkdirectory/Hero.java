@@ -17,6 +17,8 @@ public class Hero  extends DataSupport implements Serializable{
     private String origin;      //籍贯
     private int picture;        //头像
     private String pictureSource; //拍照和选择图片的文件路径
+    private String experience;
+
     //无参构造函数
     public Hero(){}
     //有参构造函数
@@ -57,6 +59,9 @@ public class Hero  extends DataSupport implements Serializable{
     public void setNationality(String nationality){
         this.nationality = nationality;
     }
+    public void setName(String name){
+        this.name = name;
+    }
 
     public void setPictureSource(String pictureSource) {
         this.pictureSource = pictureSource;
@@ -64,5 +69,13 @@ public class Hero  extends DataSupport implements Serializable{
 
     public String getPictureSource() {
         return pictureSource;
+    }
+
+    public void setExperience(String experience) {
+        this.experience = experience;
+    }
+
+    public String getExperience() {
+        return experience;
     }
 }
