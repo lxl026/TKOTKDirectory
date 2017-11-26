@@ -1,7 +1,6 @@
 package company.leon.tkotkdirectory;
 
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
@@ -37,8 +36,6 @@ public class DetailActivity extends AppCompatActivity {
     private String heroname;
     private String heronationality;
     private String experience;
-    private Bitmap bitmap;
-    private int flag = 0;//用于修改用
     private int id;//英雄的id
     private PieChartFragment pieChartFragment;
     private FragmentTransaction fragmentTransaction;
@@ -82,14 +79,16 @@ public class DetailActivity extends AppCompatActivity {
             img.setImageResource(temp.getPicture());
 
             //根据id判断是否是新增加的人物，如果是，那么图片源在bitmap中取,新增人物的图片时另外发送的
-            if (Hero_ID <= 9){
+            if (Hero_ID <= 10){
                 Glide.with(this)
                         .load(temp.getPicture())
+                        .error(R.drawable.ic_error_36pt_3x)
                         .into(img);
 
             } else {
                 Glide.with(this)
                         .load(temp.getPictureSource())
+                        .error(R.drawable.ic_error_36pt_3x)
                         .into(img);
             }
             heroname=temp.getName();//英雄的名字
@@ -122,20 +121,7 @@ public class DetailActivity extends AppCompatActivity {
             case R.id.modify_information:
 
                 Snackbar.make(toolbar, "请修改", Snackbar.LENGTH_SHORT).show();
-//                heronationality.setFocusable(true);
-//                heronationality.setFocusableInTouchMode(true);
-//                heronationality.setInputType(InputType.TYPE_CLASS_TEXT);
-//
-//                //设置为可修改状态
-//                heroorigin.setFocusable(true);
-//                heroorigin.setFocusableInTouchMode(true);
-//                heroorigin.setInputType(InputType.TYPE_CLASS_TEXT);
-//                herobirth.setFocusable(true);
-//                herobirth.setFocusableInTouchMode(true);
-//                herobirth.setInputType(InputType.TYPE_CLASS_TEXT);
-//                herosex.setFocusable(true);
-//                herosex.setFocusableInTouchMode(true);
-//                herosex.setInputType(InputType.TYPE_CLASS_TEXT);
+
 
                 //弹出对话框,并且进行人物信息的修改
                 addHeroDialog();
@@ -207,34 +193,26 @@ public class DetailActivity extends AppCompatActivity {
         if (Hero_ID <= 10){
             Glide.with(this)
                     .load(temp.getPicture())
+                    .error(R.drawable.ic_error_36pt_3x)
                     .into(hero_image);
 
         } else {
             Glide.with(this)
                     .load(temp.getPictureSource())
+                    .error(R.drawable.ic_error_36pt_3x)
                     .into(hero_image);
         }
 
 
         final android.app.AlertDialog.Builder alertDialog = new android.app.AlertDialog.Builder(DetailActivity.this);
         alertDialog.setTitle("修改人物信息");
-        alertDialog.setIcon(R.drawable.liubei);
+        alertDialog.setIcon(R.drawable.ic_mode_edit_black_36dp);
         alertDialog.setView(view);
         alertDialog.setCancelable(true);
         alertDialog.setPositiveButton("确定",new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //TODO:点击确定即增加英雄到英雄列表中并且进行更新adapter
-                //Bitmap bitmap = ((BitmapDrawable)hero_image.getDrawable()).getBitmap();
 
-                /*EditText hero_name = view.findViewById(R.id.name);//名字
-
-                RadioGroup hero_country = view.findViewById(R.id.country);//国家组合选项
-                int selected = hero_country.getCheckedRadioButtonId();//获得选中的国家的id
-
-                EditText hero_sex = view.findViewById(R.id.sex);//性别
-                EditText hero_origin = view.findViewById(R.id.hometown);//籍贯
-                EditText hero_birth = view.findViewById(R.id.birth_death);//生卒年*/
 
                 int selected = hero_country.getCheckedRadioButtonId();//获得选中的国家的id
                 //TODO 下面用TODO标注的都是修改之后获取到的字符串
@@ -259,17 +237,16 @@ public class DetailActivity extends AppCompatActivity {
                 heroorigin = hero_origin.getText().toString();//TODO 修改之后的籍贯
                 herobirth = hero_birth.getText().toString();//TODO 修改之后的生卒年
                 experience = hero_experience.getText().toString();//TODO 生平
-                //增加人物并且设置属性，增加到数据库，TODO：晓龙完成数据库添加
-                //TODO 亦爽也可以根据上面的字符串进行更新详情界面，注意更新埋生平
+                //TODO 亦爽也可以根据上面的字符串进行更新详情界面，注意更新生平
                 heroExperience.setText(experience);//TODO 去掉注释则修改人物生平
 
 
+                temp.setName(heroname);
+                temp.setNationality(heronationality);
                 temp.setSex(herosex);
                 temp.setOrigin(heroorigin);
                 temp.setBirth(herobirth);
                 temp.setExperience(experience);
-                /*new_hero.setPictureSource(ImagePath);
-                Log.d("ImagePath",ImagePath);*/
                 temp.save();
                 initView();
             }

@@ -4,7 +4,8 @@
 
     <item
         android:id="@+id/modify_information"
+        android:icon="@drawable/ic_mode_edit_black_36dp"
         android:title="修改人物信息"
-        app:showAsAction="never"/>
+        app:showAsAction="always"/>
 
 </menu>

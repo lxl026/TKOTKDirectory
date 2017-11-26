@@ -4,27 +4,30 @@
         <item
             android:id="@+id/bgm"
             android:title="背景音乐"
+            android:icon="@drawable/ic_music_note_black_36dp"
             />
-        <item
-            android:id="@+id/clean"
-            android:title="清理存储图片"
-            android:icon="@drawable/cross"
-            />
+
         <item
             android:id="@+id/restore"
-            android:title="恢复数据库"
-            android:icon="@drawable/checkmark"
+            android:title="清理缓存"
+            android:icon="@drawable/ic_restore_black_36dp"
             />
         <item
             android:id="@+id/reference_website"
             android:title="参考网站"
-            android:icon="@drawable/link"
+            android:icon="@drawable/ic_link_black_36dp"
             />
 
         <item
             android:id="@+id/aboutus"
             android:title="关于我们"
-            android:icon="@drawable/aboutus"
+            android:icon="@drawable/ic_people_black_36dp"
+            />
+
+        <item
+            android:id="@+id/copyright"
+            android:title="版权说明"
+            android:icon="@drawable/ic_copyright_black_36dp"
             />
     </group>
 </menu>

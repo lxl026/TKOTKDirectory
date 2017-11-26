@@ -28,7 +28,7 @@
                     android:id="@+id/searchBack"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/circleleft"
+                    android:src="@drawable/ic_arrow_back_white_36dp"
                     app:layout_constraintTop_toTopOf="@+id/toolbar"
                     app:layout_constraintLeft_toLeftOf="@+id/toolbar"
                     />
